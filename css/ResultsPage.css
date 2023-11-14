@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+
+body {
+    background-image: url(../assets/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+header {
+    width: 85%;
+    margin: 3% auto;
+}
+
+img {
+    width: 10em;
+}
+
+main {
+    width: 85%;
+    margin: 0 auto;
+}
+#resultsPageContainer {
+    text-align: center;
+}
+
+#resultsPageTitle {
+    width: 50%;
+    margin:0 auto;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5em;
+    line-height: 0.8em;
+    font-weight: 800;
+    line-height: 1em;
+    margin-bottom: 0.1em;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    margin-top: 0;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+
+#left, #center, #right {
+    font-family: 'Outfit', sans-serif;
+}
+
+#center {
+    width: 28%;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+button {
+
+    padding: 0.9em 3em;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bolder;
+
+}
+
+button:hover {
+        background-color : #00FFFF;
+        box-shadow: 0 0 5px 5px #01f9f981;
+        color: black;
+        border: 1px solid #00FFFF;
+        border : none;
+        cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+
+#rateUs {
+    display: flex;
+    justify-content: center;
+}

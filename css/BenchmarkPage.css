@@ -1,0 +1,6 @@
+body{
+    background-image: url(../assets/bg.jpg);
+    background-size: cover;
+    color: #E7E7EB;
+    font-family: 'Inter', sans-serif;
+}

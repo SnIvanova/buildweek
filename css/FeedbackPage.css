@@ -1,0 +1,77 @@
+body{
+    font-family: 'Outfit', sans-serif;
+   
+    background-image: url("../assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header > img{
+    width: 12%;
+    padding: 2% 9%;
+}
+
+.container{
+    color: aliceblue;
+    margin: 0 20%;
+    text-align: center;
+}
+
+
+h1{
+    font-family: 'Outfit', sans-serif;
+    font-size: 4.5em;
+}
+
+h1+p{
+    font-size: 2em;
+}
+
+.rate{
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 6%;
+}
+
+
+.rate div > i{
+    font-size: 3em;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input > p{
+    margin-bottom: 4%;
+    font-size: 1.6em;
+}
+
+.input > input{
+    width: 90%;
+    border: none;
+    border-bottom: 2px solid #d20094;
+    background-color: transparent;
+    margin-bottom: 4%;
+    padding: 1.5% 3%;
+    font-size: 1.1em;
+}
+
+.input > button{
+    background-color: #00ffff;
+    border: none;
+    padding: 2% 9%;
+    box-shadow:#00ffff 0px 0px 18px;
+    margin-bottom: 5%;
+}
+
+button > span{
+    font-size: 20px;
+    font-weight: bold;
+}
