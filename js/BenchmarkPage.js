@@ -110,19 +110,68 @@ const questions = {
 
 const questionElement = document.querySelector("#question");
 const answerContainer = document.querySelector("#answer");
+let currentQuestionIndex = 0;
+let count = 15; 
 
-const { question, correct_answer, incorrect_answers } = questions.results[0];
+function initializeQuiz() {
+  displayQuestion();
+  displayAnswers();
+  startTimer();
+  addAnswerClickListeners();
+}
 
-questionElement.innerText = question;
+function startTimer() {
+  const interval = setInterval(function () {
+    countElement.innerHTML = count;
+    count--;
 
-const answers = [correct_answer, ...incorrect_answers].sort(() => Math.random() - 0.5);
+    if (count < 0) {
+      clearInterval(interval);
+      countElement.innerHTML = 'Time\'s up!';
+      handleAnswerClick(); 
+    }
+  }, 1000);
+}
+
+function displayQuestion() {
+  const currentQuestion = questions.results[currentQuestionIndex];
+  questionElement.innerText = currentQuestion.question;
+}
+
+function shuffleArray(array) {
+  array.sort(() => Math.random() - 0.5);
+}
 
 function displayAnswers() {
+  const currentQuestion = questions.results[currentQuestionIndex];
+  const answers = [currentQuestion.correct_answer, ...currentQuestion.incorrect_answers];
+  shuffleArray(answers);
+
   answers.forEach(answer => {
     const div = document.createElement("div");
     div.innerText = answer;
+    div.addEventListener("click", () => handleAnswerClick(answer));
     answerContainer.appendChild(div);
   });
 }
 
-displayAnswers();
+function handleAnswerClick(selectedAnswer) {
+ 
+  nextQuestion();
+}
+
+function nextQuestion() {
+  answerContainer.innerHTML = ""; 
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.results.length) {
+    displayQuestion();
+    displayAnswers();
+  } else {
+    
+    console.log("Quiz completed!");
+  }
+}
+
+
+initializeQuiz();
