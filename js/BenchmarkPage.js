@@ -110,6 +110,7 @@ const questions = {
 
 const questionElement = document.querySelector("#question");
 const answerContainer = document.querySelector("#answer");
+const countElement = document.getElementById("count");
 let currentQuestionIndex = 0;
 let count = 15; 
 
@@ -127,8 +128,8 @@ function startTimer() {
 
     if (count < 0) {
       clearInterval(interval);
-      countElement.innerHTML = 'Time\'s up!';
-      handleAnswerClick(); 
+      countElement.innerHTML = "Time's up!";
+      handleAnswerClick();
     }
   }, 1000);
 }
@@ -156,22 +157,27 @@ function displayAnswers() {
 }
 
 function handleAnswerClick(selectedAnswer) {
- 
+  count = 15;
+
+
   nextQuestion();
 }
 
 function nextQuestion() {
-  answerContainer.innerHTML = ""; 
-  currentQuestionIndex++;
+  answerContainer.innerHTML = "";
 
   if (currentQuestionIndex < questions.results.length) {
     displayQuestion();
     displayAnswers();
   } else {
-    
+
     console.log("Quiz completed!");
+    countElement.innerHTML = "Quiz completed!";
   }
 }
 
+function addAnswerClickListeners() {
+ 
+}
 
 initializeQuiz();
