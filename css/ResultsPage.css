@@ -31,6 +31,15 @@ main {
     width: 85%;
     margin: 0 auto;
 }
+
+#results{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+
 #resultsPageContainer {
     text-align: center;
 }
