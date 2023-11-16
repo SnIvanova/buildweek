@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap');
-
+:root {
+    --cyan: #00ffff;
+    --magenta1: #900080;
+    --magenta2: #d20094;
+  }
 html, body {
     margin: 0;
     padding: 0;
@@ -16,6 +20,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    font-family: 'Outfit', sans-serif;
 }
 
 header {
@@ -41,7 +46,7 @@ main {
 }
 
 
-#resultsPageContainer {
+#ResultsPageContainer {
     text-align: center;
 }
 
@@ -68,18 +73,74 @@ p {
     justify-content: center;
 }
 
-#left, #center, #right {
-    font-family: 'Outfit', sans-serif;
-}
-
 #center {
-    width: 28%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
+#results-page .chart-wheel-container {
+    margin-top: -24rem;
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    vertical-align: middle;
+  }
+
+  #results-page .center .magenta {
+    display: block;
+    color: var(--magenta2);
+  }
+  
+  #results-page .center .cyan {
+    display: block;
+    color: var(--cyan);
+  }
+#donut-2 {
+    filter: drop-shadow(5px 5px 20px rgb(0 0 0 / 0.75));
+    position: absolute;
+    width: 100%;
+  }
+
+  #results-page .donut-ring-2 {
+    stroke: #00ffff;
+  }
+
+  #results-page .donut-segment-2 {
+    stroke: #c2128d;
+    animation: donut2 3s;
+  }
+  #results-page .donut-percent-2 {
+    animation: donutfadelong 1s;
+  }
+
+@keyframes donut2 {
+    0% {
+      stroke-dasharray: 100 0;
+    }
+    100% {
+      stroke-dasharray: var(--complementValue) var(--dasharrayEnd);
+    }
+  }
+
+  #feedback {
+    position: absolute;
+    top: 7.7rem;
+    left: 6rem;
+    width: 12rem;
+  }
+  
+  #feedback h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  #feedback p {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
 button {
     margin-top: 2em;
     padding: 0.9em 3em;
