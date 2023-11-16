@@ -37,6 +37,7 @@ main {
     justify-content: space-between;
     align-content: center;
     align-items: center;
+    margin: 1.5em
 }
 
 
@@ -73,12 +74,14 @@ p {
 
 #center {
     width: 28%;
-    margin-left: 5em;
-    margin-right: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 button {
-
+    margin-top: 2em;
     padding: 0.9em 3em;
     font-size: 1.1em;
     background-color: transparent;

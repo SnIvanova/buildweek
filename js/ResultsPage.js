@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function createResultElement(title, percentage, count, container, textAlign) {
         const titleElement = createParagraph(title, '3em', '0', '1em');
         const percentageElement = createParagraph(percentage + '%', '3em', '0', 'bold');
-        const countElement = createParagraph(`${count}/${total} questions`, '0', '0', '100px');
+        const countElement = createParagraph(`${count}/${total} questions`, '1em', '0', '100px');
         const emptyElement = createParagraph('\n', '0', '0', '0');
 
         container.appendChild(titleElement);
@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
             plugins: [{
                 id: 'text',
                 beforeDatasetsDraw: function (chart) {
-                    if (wrongPercentage < 50) {
+                    if (wrongPercentage < 60) {
                         configureCongratulationsText(context, canvas.width, canvas.height);
-                        configureCertificateText(context, canvas.width, canvas.height);
+                        
                     } else{configureSorryText(context, canvas.width, canvas.height);
                     }
                 },
@@ -86,14 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function configureCongratulationsText(ctx, width, height) {
         configureText(ctx, 'Congratulations!', 'white', width , height, 2.9);
         configureText(ctx, 'You passed the exam', 'aqua', width, height, 2.4);
-    }
-
-    function configureCertificateText(ctx, width, height) {
         configureText(ctx, `We'll send you the certificate in`, 'white', width, height, 1.8);
         configureText(ctx, 'in few minutes.', 'white', width, height, 1.65);
         configureText(ctx, 'Check your email (including', 'white', width, height, 1.55);
         configureText(ctx, 'promotions/spam folder)', 'white', width, height, 1.45);
     }
+
 
     function configureSorryText(ctx, width, height) {
         configureText(ctx, 'Sorry!', 'white', width, height, 2.5);
@@ -102,15 +100,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function configureText(ctx, text, color, width, height, ratio) {
         ctx.restore();
-        const fontSize = (height / 350);
-        ctx.font = `${fontSize}em sans-serif`;
+        ctx.font = '0.8em sans-serif';
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center'; 
     
-        const textX = width /  ratio; 
-        const textY = height / ratio;
-    
         ctx.fillStyle = color;
-        ctx.fillText(text, textX, textY);
+        ctx.fillText(text, width / 2, height / (2 * ratio));
     }
 });
