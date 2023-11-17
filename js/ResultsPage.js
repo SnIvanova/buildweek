@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let totalQuestions = parseInt(localStorage.getItem('totalQuestions'));
     let match =parseInt(localStorage.getItem('score'));
-    let risposteUtente = localStorage.getItem('risposteUtente').split(',');
+
     let unmatch = totalQuestions - match;
 
     const answer = {

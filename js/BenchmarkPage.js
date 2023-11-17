@@ -155,12 +155,16 @@ function aggiornaDomanda() {
             risposteUtente.push(btn.innerText)
             if(risposteCorrette.includes(btn.innerText)){
               console.log("Giusto");
+              btn.style.backgroundColor = "green";
             }else{
               console.log("Sbagliato")
+              btn.style.backgroundColor = "red";
             }
             resetTimer();
-            startTimer();
-            domandaSuccessiva();
+            setTimeout(() => {
+              startTimer();
+              domandaSuccessiva();
+          }, 2000);
         })
         risposte.appendChild(div);
         div.appendChild(btn);
