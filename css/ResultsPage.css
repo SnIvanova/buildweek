@@ -20,7 +20,7 @@ body {
 
 header {
     width: 85%;
-    margin: 3% auto;
+    margin: 2em 0 1em 2em;
 }
 
 img {
@@ -103,4 +103,18 @@ a {
 #rateUs {
     display: flex;
     justify-content: center;
+}
+
+canvas {
+    width: 400px; /* Adjust the default width as needed */
+    height: 400px; /* Adjust the default height as needed */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    canvas {
+        width: 100%; /* Make the canvas take 100% of the container width */
+        height: auto; /* Auto height to maintain aspect ratio */
+        max-width: 400px; /* Set a maximum width if needed */
+    }
 }

@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    
     const match = 8;
     const unmatch = 2; 
 
@@ -105,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     function configureCongratulationsText(ctx, width, height) {
-        configureText(ctx, 'Congratulations!', 'white', width, height, 0.4, 0.25);
-        configureText(ctx, 'You passed the exam', 'aqua', width, height, 0.4, 0.30);
+        configureText(ctx, 'Congratulations!' , 'white', width, height, 0.4, 0.25, '2em');
+        configureText(ctx, 'You passed the exam', 'aqua', width, height, 0.4, 0.30, '0.9em');
         configureText(ctx, `We'll send you the certificate in`, 'white', width, height, 0.4, 0.4);
         configureText(ctx, 'a few minutes.', 'white', width, height, 0.4, 0.45);
         configureText(ctx, 'Check your email (including', 'white', width, height, 0.4, 0.5);
