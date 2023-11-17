@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const match = 5;
-    const unmatch = 11;
+    let totalQuestions = parseInt(localStorage.getItem('totalQuestions'));
+    let match =parseInt(localStorage.getItem('score'));
+    let risposteUtente = localStorage.getItem('risposteUtente').split(',');
+    let unmatch = totalQuestions - match;
 
     const answer = {
         match,
         unmatch,
     };
+
 
     const total = answer.match + answer.unmatch;
     const correctPercentage = ((answer.match / total) * 100).toFixed(1);
@@ -101,11 +104,12 @@ document.addEventListener('DOMContentLoaded', function () {
             plugins: [{
                 id: 'text',
                 beforeDatasetsDraw: function (chart) {
-                    if (wrongPercentage < 60) {
-                        configureCongratulationsText(context, canvas.width, canvas.height);
-                    } else {
+                    if (wrongPercentage >= 50) {
                         configureSorryText(context, canvas.width, canvas.height);
+                    } else {
+                        configureCongratulationsText(context, canvas.width, canvas.height);
                     }
+                    
                 },
             }],
         });

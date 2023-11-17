@@ -124,9 +124,11 @@ function domandaSuccessiva() {
         aggiornaDomanda();
         startTimer();
     } else {
+        checkRisposte();
         window.location.href = "ResultsPage.html";
     }
 }
+
 
 function aggiornaDomanda() {
     domanda.innerText = questions.results[domandaAttuale].question;
@@ -314,5 +316,22 @@ for (let t=0;t<questions.results.length;t++) {
 }
 console.log(risposteCorrette)
 function checkRisposte(){
-  
+  let score = 0;
+  for(let i = 0; i < risposteUtente.length; i++){
+    localStorage.setItem('rispostaUtente' + i, risposteUtente[i]);
+}
+localStorage.setItem('totalRisposteUtente', risposteUtente.length);
+  console.log("Score: " + score);}
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  let match = localStorage.getItem('score');
+  let unmatch = questions.results.length - match;
+
+});
+function storeResults() {
+  localStorage.setItem('totalQuestions', questions.results.length.toString());
+  localStorage.setItem('score', score.toString());
+  localStorage.setItem('risposteUtente', risposteUtente.toString());
 }
