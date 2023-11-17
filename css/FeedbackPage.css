@@ -61,6 +61,7 @@ h1+p{
     margin-bottom: 4%;
     padding: 1.5% 3%;
     font-size: 1.1em;
+    color: white;
 }
 
 .input > button{
@@ -70,11 +71,18 @@ h1+p{
     box-shadow:#00ffff 0px 0px 18px;
     margin-bottom: 5%;
 }
-
+.input > input:focus{
+    outline: none;
+}
 button > span{
     font-size: 20px;
     font-weight: bold;
 }
 .colore {
     color: #00ffff!important;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

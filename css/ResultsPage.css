@@ -106,15 +106,14 @@ a {
 }
 
 canvas {
-    width: 400px; /* Adjust the default width as needed */
-    height: 400px; /* Adjust the default height as needed */
+    width: 400px; 
+    height: 400px;
 }
 
-/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     canvas {
-        width: 100%; /* Make the canvas take 100% of the container width */
-        height: auto; /* Auto height to maintain aspect ratio */
-        max-width: 400px; /* Set a maximum width if needed */
+        width: 100%;
+        height: auto; 
+        max-width: 400px;
     }
 }
