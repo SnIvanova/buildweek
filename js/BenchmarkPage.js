@@ -111,7 +111,13 @@ const questions = {
 let domanda = document.querySelector("#question");
 let risposte = document.querySelector("#answer");
 let domandaAttuale = 0;
+let score = 0;
 let risposteUtente = [];
+let risposteCorrette = [];
+
+for (let t=0;t<questions.results.length;t++) {
+  risposteCorrette.push(questions.results[t].correct_answer);
+}
 
 function show() {
     aggiornaDomanda();
@@ -119,14 +125,15 @@ function show() {
 
 
 function domandaSuccessiva() {
-    domandaAttuale++;
-    if (domandaAttuale < questions.results.length) {
-        aggiornaDomanda();
-        startTimer();
-    } else {
-        checkRisposte();
-        window.location.href = "ResultsPage.html";
-    }
+  domandaAttuale++;
+  if (domandaAttuale < questions.results.length) {
+      aggiornaDomanda();
+      startTimer();
+  } else {
+      checkRisposte();
+      storeResults();
+      window.location.href = "ResultsPage.html";
+  }
 }
 
 
@@ -182,7 +189,7 @@ show();
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 6;
 const ALERT_THRESHOLD = 3;
-const TIME_LIMIT = 10; // Assicurati di definire TIME_LIMIT
+const TIME_LIMIT = 10; 
 
 const COLOR_CODES = {
   info: {
@@ -233,8 +240,8 @@ function resetTimer() {
     setRemainingPathColor(timeLeft);
     setCircleDasharray();
     document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-    clearInterval(timerInterval);  // Aggiungi questa riga per fermare il timer corrente
-}
+    clearInterval(timerInterval);  
+  }
 function startTimer() {
   clearInterval(timerInterval);
   timeLeft = TIME_LIMIT;
@@ -314,10 +321,6 @@ function setCircleDasharray() {
 startTimer();
 
 
-let risposteCorrette = [];
-for (let t=0;t<questions.results.length;t++) {
-  risposteCorrette.push(questions.results[t].correct_answer);
-}
 console.log(risposteCorrette)
 function checkRisposte(){
   let score = 0;
@@ -335,7 +338,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 function storeResults() {
+  for(let i = 0; i < risposteUtente.length; i++){
+    if (risposteCorrette.includes(risposteUtente[i])) {
+      score++;
+    }
+  }
   localStorage.setItem('totalQuestions', questions.results.length.toString());
   localStorage.setItem('score', score.toString());
   localStorage.setItem('risposteUtente', risposteUtente.toString());
 }
+

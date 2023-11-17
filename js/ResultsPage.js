@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function configureDoughnutChart(canvas, wrongPercentage, correctPercentage) {
         const context = canvas.getContext('2d');
         const backgroundColors = ['#D20094', '#00FFFF'];
-        const cutoutPercentage = '70%';
+        const cutoutPercentage = 115;
 
         adjustOpacityBasedOnPercentage(wrongPercentage, context, canvas.width, canvas.height);
 
@@ -134,6 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
         configureText(ctx, 'a few minutes.', 'white', width, height, 0.4, 0.45);
         configureText(ctx, 'Check your email (including', 'white', width, height, 0.4, 0.5);
         configureText(ctx, 'promotions/spam folder)', 'white', width, height, 0.4, 0.55);
+        
+    
     }
 
     function configureSorryText(ctx, width, height) {
@@ -141,3 +143,4 @@ document.addEventListener('DOMContentLoaded', function () {
         configureText(ctx, "You didn't pass the exam", 'red', width, height, 0.4, 0.45, '1.2em');
     }
 });
+  
