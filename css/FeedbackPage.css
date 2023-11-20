@@ -8,7 +8,7 @@ body{
     background-attachment: fixed;
 }
 
-header > img{
+header a > img{
     width: 12%;
     padding: 2% 9%;
 }

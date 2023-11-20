@@ -19,3 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+let select = document.querySelector("#difficoltà");
+let size = document.querySelector("#size");
+
+console.log(size.value);
+let difficulty = "";
+let indice = 0;
+
+function getValue2(){
+    indice = size.value;
+    console.log(indice);
+    localStorage.setItem("indice", indice);
+
+}
+  getValue2();
+function getValue(){
+    difficulty = select.value;
+    console.log(difficulty);
+    localStorage.setItem('scelta', difficulty);
+}
+  getValue();

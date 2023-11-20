@@ -10,7 +10,6 @@ html, body {
     font-size: 16px;
 }
 
-
 body {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
@@ -40,7 +39,6 @@ main {
     margin: 1.5em
 }
 
-
 #resultsPageContainer {
     text-align: center;
 }
@@ -61,9 +59,12 @@ h1 {
     justify-content: center;
 }
 
+h1 + p{
+    font-size: 1.3em;
+}
+
 p {
     margin-top: 0;
-    font-size: 1.5em;
     display: flex;
     justify-content: center;
 }
@@ -74,7 +75,9 @@ p {
 
 #center {
     width: 28%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -85,17 +88,17 @@ button {
     color: white;
     border: 2px solid white;
     font-weight: bolder;
-
 }
 
 button:hover {
-        background-color : #00FFFF;
-        box-shadow: 0 0 5px 5px #01f9f981;
-        color: black;
-        border: 1px solid #00FFFF;
-        border : none;
-        cursor: pointer;
+    background-color: #00FFFF;
+    box-shadow: 0 0 5px 5px #01f9f981;
+    color: black;
+    border: 1px solid #00FFFF;
+    border: none;
+    cursor: pointer;
 }
+
 a {
     text-decoration: none;
 }
@@ -104,17 +107,70 @@ a {
     display: flex;
     justify-content: center;
 }
-
-canvas {
-    width: 400px; 
-    height: 400px;
+#center {
+    width: 28%;
+    position: relative;
 }
 
-@media (max-width: 768px) {
-    canvas {
-        width: 100%;
-        height: auto; 
-        max-width: 400px;
+#centered-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+}
+
+
+#myCanvas {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  
+
+    .testo{
+        font-size: 0.3em;
     }
+
+
 }
 
+
+#centered-div > p:first-child{
+    margin-bottom: 0;
+}
+
+
+
+.boldi{
+    font-weight: bold;
+}
+
+.pColore{
+    font-weight: bold;
+    color: #00FFFF;
+}
+
+.testo{
+    font-size: 0.9em;
+}
+
+.tre, .quattro{
+    font-size: 0.8em;
+    padding: 0 15%;
+}
+
+.rosso{
+    color: red;
+}
+
+.cinque{
+    font-weight: bold;
+    font-size: 1.3em;
+}

@@ -32,6 +32,18 @@
                     <li>This exam will take approx. <span>0-5 minutes.</span></li>
                 </ul>
             </div>
+
+            <label for="difficoltà">Choose a difficulty:</label>
+            <select id="difficoltà" name="scelta" onchange="getValue()">
+                <option value="" disabled selected hidden>Scegli</option>
+                <option value="hard">Hard</option>
+                <option value="easy">Easy</option>
+
+            </select>
+            <p>
+                <label for="size">Choose number of questions:</label>
+                <input id="size" onchange="getValue2()" type="number" min="1" max="13">
+            </p>
         </main>
         <footer>
             <input type="checkbox">

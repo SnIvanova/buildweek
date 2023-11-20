@@ -19,6 +19,8 @@ header img{
     height: auto;
 }
 
+
+
 h1 p{
     font-size: 60px;
     font-family: 'Outfit', sans-serif;
@@ -73,9 +75,10 @@ footer p{
     font-size: 20px;
     box-shadow:#00ffff 0px 0px 18px;
 }
-input{
-    padding: 0.9em 3em;
+footer input{
+    padding: 0.4em;
     font-size: 1.1em;
+    appearance: none;
     background-color: transparent;
     color: white;
     border: 2px solid white;
@@ -83,7 +86,28 @@ input{
    
 }
 
+footer input:checked{
+    padding: 0.4em;
+    font-size: 1.1em;
+    appearance: none;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bolder;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZGUxZmNiIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+   
+}
+
 a{
     text-decoration: none;
     color: black;
 }
+
+#size{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: #C7128F;
+    text-align: center;
+}
+

@@ -1,140 +1,140 @@
 body{
-  background-image: url(../assets/bg.jpg);
-  background-size: cover;
-  color: #E7E7EB;
-  font-family: 'Inter', sans-serif;
-  display: grid;
-  place-items: center;
+    background-image: url(../assets/bg.jpg);
+    background-size: cover;
+    color: #E7E7EB;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    place-items: center;
 }
 
 .container {
-padding: 3%;
+ padding: 3%;
 }
 
 main{
-  padding: 3%;
+    padding: 3%;
 }
 
 main h1, #answer, .contatore{
-  text-align: center;
+    text-align: center;
 }
 
 .contatore p> span{
-  color: #d20094;
+    color: #d20094;
 }
 
 #answer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 250px;
-  margin-bottom: 10%;
-  margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 250px;
+    margin-bottom: 10%;
+    margin-top: 3%;
 }
 
 #answer div{
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
 }
 
 .green{
-background-color: green!important;
+  background-color: green!important;
 }
 
 
 #answer div > button{
-  border: 2px solid white;
-  padding: 2%;
-  border-radius: 122px 122px 140px 140px / 105px 105px 98px 98px;
-  width: 70%;
-  height: 70px;
-  background-color: rgb(172 156 156 / 16%);
-  border-bottom: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1em;
+    border: 2px solid white;
+    padding: 2%;
+    border-radius: 122px 122px 140px 140px / 105px 105px 98px 98px;
+    width: 70%;
+    height: 70px;
+    background-color: rgb(172 156 156 / 16%);
+    border-bottom: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 #answer div >button:hover{
-  background-color: #d20094;
-  cursor: pointer;
+    background-color: #d20094;
+    cursor: pointer;
 }
-
+ 
 
 header{
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 header div a > img{
-  width: 20%;
-  padding-left: 7%;
+    width: 20%;
+    padding-left: 7%;
 }
 .colore{
-  color: #d20094;
+    color: #d20094;
 }
 #app{
-  margin-right: 8%;
+    margin-right: 8%;
 }
 
 .textCont{
-  font-size: 0.4em;
+    font-size: 0.4em;
 }
 
 
 .base-timer {
-  position: relative;
-  width: 170px;
-  height: 170px;
+    position: relative;
+    width: 170px;
+    height: 170px;
 
-}
-
-.base-timer__svg {
-  transform: scaleX(-1);
-}
-
-.base-timer__circle {
-  fill: none;
-  stroke: none;
-}
-
-.base-timer__path-elapsed {
-  stroke-width: 7px;
-  stroke: grey;
-}
-
-.base-timer__path-remaining {
-  stroke-width: 7px;
-  stroke-linecap: round;
-  transform: rotate(90deg);
-  transform-origin: center;
-  transition: 1s linear all;
-  fill-rule: nonzero;
-  stroke: currentColor;
-}
-
-.base-timer__path-remaining.green {
-  color: #00ffff;
-}
-
-.base-timer__path-remaining.orange {
-  color: orange;
-}
-
-.base-timer__path-remaining.red {
-  color: red;
-}
-
-.base-timer__label {
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-direction: column;
-  font-size: 2em;
-}
+  }
+  
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+  
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+  }
+  
+  .base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+  }
+  
+  .base-timer__path-remaining.green {
+    color: #00ffff;
+  }
+  
+  .base-timer__path-remaining.orange {
+    color: orange;
+  }
+  
+  .base-timer__path-remaining.red {
+    color: red;
+  }
+  
+  .base-timer__label {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-direction: column;
+    font-size: 2em;
+  }
