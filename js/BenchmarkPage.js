@@ -171,7 +171,7 @@ function aggiornaDomanda() {
             setTimeout(() => {
               startTimer();
               domandaSuccessiva();
-          }, 2000);
+          }, 1000);
         })
         risposte.appendChild(div);
         div.appendChild(btn);

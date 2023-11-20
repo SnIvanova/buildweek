@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         unmatch,
     };
 
-
     const total = answer.match + answer.unmatch;
     const correctPercentage = ((answer.match / total) * 100).toFixed(1);
     const wrongPercentage = ((answer.unmatch / total) * 100).toFixed(1);
@@ -24,6 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
         configureDoughnutChart(canvas, wrongPercentage, correctPercentage);
     }
 
+    if (correctPercentage > 50) {
+        // Create confetti effects at different parts of the screen
+        for (let i = 0; i < 10; i++) {
+            confetti({
+                particleCount: 20, // decrease the number of particles for each effect
+                spread: 120,
+                origin: { y: Math.random(), x: Math.random() }, // randomize the origin
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
+                shapes: ['circle', 'square'],
+                scalar: 1.2,
+            });
+        }
+    }
+    
+    
+    
     function createParagraph(text, fontSize, margin, fontWeight) {
         const paragraph = document.createElement('p');
         paragraph.innerText = text;
@@ -142,5 +157,5 @@ document.addEventListener('DOMContentLoaded', function () {
         configureText(ctx, 'Sorry!', 'white', width, height, 0.4, 0.4, '1.2em');
         configureText(ctx, "You didn't pass the exam", 'red', width, height, 0.4, 0.45, '1.2em');
     }
+
 });
-  
