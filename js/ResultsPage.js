@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (correctPercentage > 50) {
-        // Create confetti effects at different parts of the screen
+
         for (let i = 0; i < 10; i++) {
             confetti({
-                particleCount: 20, // decrease the number of particles for each effect
+                particleCount: 20,
                 spread: 120,
-                origin: { y: Math.random(), x: Math.random() }, // randomize the origin
+                origin: { y: Math.random(), x: Math.random() },
                 colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
                 shapes: ['circle', 'square'],
                 scalar: 1.2,
