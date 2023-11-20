@@ -24,18 +24,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (correctPercentage > 50) {
-
-        for (let i = 0; i < 10; i++) {
-            confetti({
-                particleCount: 20,
-                spread: 120,
-                origin: { y: Math.random(), x: Math.random() },
-                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
-                shapes: ['circle', 'square'],
-                scalar: 1.2,
-            });
-        }
+        const duration = 5000;
+        const end = Date.now() + duration;
+        const colors = ['#fce18a', '#ff726d', '#b48def', '#f4306d', '#3ae374', '#1f4287', '#7400b8'];
+        const animations = ['slow', 'medium', 'fast'];
+        const particlesPerFrame = 4; 
+        (function frame() {
+            for (let i = 0; i < particlesPerFrame; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.top = '0%';
+                const leftPosition = Math.random() * 100;
+                particle.style.left = `${leftPosition}%`;
+                const size = Math.floor(Math.random() * 3 + 7);
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                document.body.appendChild(particle);
+    
+                const fallSpeed = animations[Math.floor(Math.random() * animations.length)];
+    
+                const keyframes = [
+                    { transform: `translateY(0vh) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`, opacity: 1 },
+                    { transform: `translateY(105vh) rotateX(360deg) rotateY(360deg) rotateZ(360deg)`, opacity: 1 }
+                ];
+    
+                const animationOptions = {
+                    duration: fallSpeed === 'slow' ? 2250 : fallSpeed === 'medium' ? 1750 : 1250,
+                    easing: 'linear',
+                    fill: 'forwards'
+                };
+    
+                particle.animate(keyframes, animationOptions);
+    
+                setTimeout(() => {
+                    document.body.removeChild(particle);
+                }, animationOptions.duration);
+            }
+    
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
     }
+    
+    
+    
+    
     
     
     
@@ -139,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         ctx.fillStyle = color;
         ctx.fillText(text, width * ratioX, height * ratioY);
+        
     }
     
 
